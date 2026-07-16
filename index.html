@@ -227,7 +227,7 @@
 
     <div class="game-over" id="gameOverScreen">
         <h2>Game Over!</h2>
-        <p>You hit a wall or yourself</p>
+        <p id="gameOverMessage">You hit a wall or yourself</p>
         <div class="game-over-score">Score: <span id="finalScore">0</span></div>
         <button class="btn-start" onclick="startGame()">Play Again</button>
     </div>
@@ -239,6 +239,7 @@
         const scoreDisplay = document.getElementById('score');
         const highScoreDisplay = document.getElementById('highScore');
         const finalScoreDisplay = document.getElementById('finalScore');
+        const gameOverMessage = document.getElementById('gameOverMessage');
         const startBtn = document.getElementById('startBtn');
         const restartBtn = document.getElementById('restartBtn');
 
@@ -367,13 +368,13 @@
 
             // Check wall collision
             if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-                endGame();
+                endGame('wall');
                 return;
             }
 
             // Check self collision
             if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
-                endGame();
+                endGame('self');
                 return;
             }
 
@@ -417,7 +418,7 @@
             startBtn.textContent = gamePaused ? 'Resume' : 'Pause';
         }
 
-        function endGame() {
+        function endGame(reason) {
             gameActive = false;
             clearInterval(gameLoop);
             startBtn.textContent = 'Start Game';
@@ -430,6 +431,7 @@
             }
 
             finalScoreDisplay.textContent = score;
+            gameOverMessage.textContent = reason === 'wall' ? 'You tried to eat a wall!' : 'You tried to bite yourself!';
             gameOverScreen.classList.add('show');
         }
 
