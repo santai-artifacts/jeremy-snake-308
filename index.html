@@ -71,10 +71,11 @@
         }
 
         .controls {
-            color: #333;
+            color: #555;
             font-size: 0.9rem;
             line-height: 1.6;
             margin-bottom: 15px;
+            font-weight: 500;
         }
 
         .controls strong {
@@ -89,42 +90,42 @@
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 0.95rem;
+            padding: 12px 28px;
+            font-size: 1rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.15s ease;
-            letter-spacing: 0.5px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
         }
 
         .btn-start {
-            background: #007AFF;
+            background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
             color: white;
         }
 
         .btn-start:hover {
-            background: #0051D5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(92, 139, 47, 0.3);
         }
 
         .btn-start:active {
-            background: #003DA0;
-            transform: scale(0.96);
+            transform: translateY(0);
         }
 
         .btn-restart {
-            background: #e5e5ea;
-            color: #000;
+            background: linear-gradient(135deg, #fdd835 0%, #fbc02d 100%);
+            color: #2d5016;
         }
 
         .btn-restart:hover {
-            background: #d1d1d6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(253, 216, 53, 0.3);
         }
 
         .btn-restart:active {
-            background: #bfbfc4;
-            transform: scale(0.96);
+            transform: translateY(0);
         }
 
         .game-over {
