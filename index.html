@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worm Game</title>
+    <title>Snake</title>
     <style>
         * {
             margin: 0;
@@ -89,36 +89,42 @@
         }
 
         button {
-            padding: 12px 24px;
-            font-size: 1rem;
+            padding: 10px 20px;
+            font-size: 0.95rem;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s ease;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            letter-spacing: 0.5px;
         }
 
         .btn-start {
-            background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
+            background: #007AFF;
             color: white;
         }
 
         .btn-start:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(124, 179, 66, 0.4);
+            background: #0051D5;
         }
 
         .btn-start:active {
-            transform: translateY(0);
+            background: #003DA0;
+            transform: scale(0.96);
         }
 
         .btn-restart {
-            background: #f0f0f0;
-            color: #333;
+            background: #e5e5ea;
+            color: #000;
         }
 
         .btn-restart:hover {
-            background: #e0e0e0;
+            background: #d1d1d6;
+        }
+
+        .btn-restart:active {
+            background: #bfbfc4;
+            transform: scale(0.96);
         }
 
         .game-over {
@@ -189,7 +195,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🪱 Worm</h1>
+        <h1>Snake</h1>
 
         <div class="stats">
             <div class="stat">
