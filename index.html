@@ -468,16 +468,8 @@
 
         // Event listeners
         document.addEventListener('keydown', handleInput);
-        startBtn.addEventListener('click', startGame);
-        restartBtn.addEventListener('click', () => {
-            clearInterval(gameLoop);
-            gameActive = false;
-            gamePaused = false;
-            gameOverScreen.classList.remove('show');
-            draw();
-            startBtn.textContent = 'Start Game';
-            startBtn.onclick = startGame;
-        });
+        startBtn.onclick = startGame;
+        restartBtn.addEventListener('click', startGame);
 
         // Initial draw
         draw();
